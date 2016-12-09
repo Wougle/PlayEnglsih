@@ -1,0 +1,77 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.3.0):
+    - CocoaLumberjack/Default
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - HcdCachePlayer (0.0.5):
+    - Masonry
+  - IQKeyboardManager (4.0.4)
+  - KDCycleBannerView (1.1.1):
+    - SDWebImage
+  - Masonry (1.0.1)
+  - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.12)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - TYAttributedLabel (2.6.1)
+  - YYCategories (1.0.3):
+    - YYCategories/no-arc (= 1.0.3)
+  - YYCategories/no-arc (1.0.3)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - CocoaLumberjack (~> 2.3.0)
+  - FMDB (~> 2.6.2)
+  - HcdCachePlayer
+  - IQKeyboardManager (~> 4.0.4)
+  - KDCycleBannerView (~> 1.1.1)
+  - Masonry (~> 1.0.1)
+  - MBProgressHUD (~> 0.9.2)
+  - MJRefresh (~> 3.1.9)
+  - SDWebImage (~> 3.8.1)
+  - TYAttributedLabel
+  - YYCategories (~> 1.0.3)
+  - YYModel (~> 1.0.4)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HcdCachePlayer: 1eec4f4a00d02287a432e7062107ffb04925dbd8
+  IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
+  KDCycleBannerView: 6dbac2cda6b1a6f4e27b65d66249ecd966403b8b
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  TYAttributedLabel: 4785820dc8d7935446f49f1de4daa0f99ebcba8a
+  YYCategories: 0fd4d9eb0994d8d0e355beb4081c8f7202a82b7b
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: e0d084518545d3ff5dd3e71b23a6dabb6df546d9
+
+COCOAPODS: 1.0.1

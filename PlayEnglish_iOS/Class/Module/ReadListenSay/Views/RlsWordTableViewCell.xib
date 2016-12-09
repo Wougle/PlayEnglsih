@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="164" id="KGk-i7-Jjw" customClass="RlsWordTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="375" height="179"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-du-RLX">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="black" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAu-0g-Vpn">
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.89411764709999997" green="0.29411764709999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text=" [blæk] " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seM-N5-RZt">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.28235294119999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsD-xb-hMb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="K8D-Qd-VoR"/>
+                                    <constraint firstAttribute="height" constant="45" id="r85-jR-nMl"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="-9" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="rls_voice_black"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adj.黑的;黑色人种的;黑暗的;不加牛奶的  n.黑色;黑人;黑颜料;黑暗" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDa-tY-f9R">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="312" id="U9R-AL-9tA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.28235294119999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYw-lS-7jb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="Qco-Uo-Tpi"/>
+                                    <constraint firstAttribute="height" constant="30" id="hJR-QH-jmC"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="添加">
+                                    <color key="titleColor" red="0.89411764709999997" green="0.29411764709999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" title="已添加">
+                                    <color key="titleColor" red="0.50588235294117645" green="0.4823529411764706" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PAu-0g-Vpn" firstAttribute="top" secondItem="kdV-du-RLX" secondAttribute="top" constant="12" id="3an-gN-ARo"/>
+                            <constraint firstItem="oYw-lS-7jb" firstAttribute="centerX" secondItem="kdV-du-RLX" secondAttribute="centerX" id="5xC-wf-88p"/>
+                            <constraint firstItem="PAu-0g-Vpn" firstAttribute="leading" secondItem="kdV-du-RLX" secondAttribute="leading" constant="30" id="ABi-JK-MdY"/>
+                            <constraint firstItem="FDa-tY-f9R" firstAttribute="bottom" secondItem="oYw-lS-7jb" secondAttribute="top" constant="-19" id="JO4-Jt-NAN"/>
+                            <constraint firstItem="FDa-tY-f9R" firstAttribute="leading" secondItem="kdV-du-RLX" secondAttribute="leading" constant="33" id="KCe-ui-Nqc"/>
+                            <constraint firstItem="FDa-tY-f9R" firstAttribute="top" secondItem="seM-N5-RZt" secondAttribute="bottom" constant="10" id="OAF-gv-9md"/>
+                            <constraint firstAttribute="bottom" secondItem="oYw-lS-7jb" secondAttribute="bottom" constant="17" id="W6h-lD-6Qy"/>
+                            <constraint firstAttribute="trailing" secondItem="FDa-tY-f9R" secondAttribute="trailing" constant="30" id="Wug-12-mp9"/>
+                            <constraint firstAttribute="trailing" secondItem="DsD-xb-hMb" secondAttribute="trailing" constant="14" id="cFM-wG-177"/>
+                            <constraint firstItem="DsD-xb-hMb" firstAttribute="top" secondItem="kdV-du-RLX" secondAttribute="top" constant="15" id="miL-bw-L46"/>
+                            <constraint firstItem="seM-N5-RZt" firstAttribute="leading" secondItem="kdV-du-RLX" secondAttribute="leading" constant="30" id="pAz-Ml-xm6"/>
+                            <constraint firstItem="seM-N5-RZt" firstAttribute="top" secondItem="PAu-0g-Vpn" secondAttribute="bottom" id="sUQ-1a-iuY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="kdV-du-RLX" secondAttribute="bottom" constant="-9" id="1AH-dX-CxM"/>
+                    <constraint firstItem="kdV-du-RLX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="EhI-5c-pmL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kdV-du-RLX" secondAttribute="trailing" constant="-8" id="PhP-mN-Ei5"/>
+                    <constraint firstItem="kdV-du-RLX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="wIE-Ul-TaK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addBtn" destination="oYw-lS-7jb" id="5CB-RC-zeE"/>
+                <outlet property="baseView" destination="kdV-du-RLX" id="tJz-ui-5aD"/>
+                <outlet property="meansLabel" destination="FDa-tY-f9R" id="WRi-JR-UC9"/>
+                <outlet property="pronounceLabel" destination="seM-N5-RZt" id="iYv-8X-C7m"/>
+                <outlet property="voiceBtn" destination="DsD-xb-hMb" id="eMK-nB-nOO"/>
+                <outlet property="wordLabel" destination="PAu-0g-Vpn" id="FD5-N2-dpZ"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="132"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="rls_voice_black" width="15" height="24"/>
+    </resources>
+</document>

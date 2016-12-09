@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="WordLibraryCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="283" height="303"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="283" height="303"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1y-5R-s52">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="300"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="absorb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-jV-bGL">
+                                <rect key="frame" x="0.0" y="64" width="280" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="7rz-CV-6aD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.89411764709999997" green="0.29411764709999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot6-H9-rMp">
+                                <rect key="frame" x="75" y="123" width="55" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FTy-bn-SLE"/>
+                                    <constraint firstAttribute="width" constant="55" id="SVF-Kg-IKV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-11" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="英" image="发音">
+                                    <color key="titleColor" red="0.31372549020000001" green="0.28235294119999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3Q-5b-o0N">
+                                <rect key="frame" x="75" y="153" width="55" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="PQA-Nx-SkO"/>
+                                    <constraint firstAttribute="height" constant="20" id="i7Q-VM-p9t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-11" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="美" image="发音">
+                                    <color key="titleColor" red="0.31372549020000001" green="0.28235294119999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" [əbˈsɔ:b] " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ8-Im-cmN">
+                                <rect key="frame" x="130" y="121.5" width="75.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wDD-Cf-kN6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.28235294119999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" [əbˈsɔ:b] " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruw-b4-4BE">
+                                <rect key="frame" x="130" y="151.5" width="75.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fXN-2o-GBT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.28235294119999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vt.吸收（液体、气体等）;吸引（注意） ;吞并，合并;忍受，承担（费用）" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLC-VU-EkY">
+                                <rect key="frame" x="32" y="218" width="224" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="RLy-0T-8IE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.28235294119999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="H3Q-5b-o0N" firstAttribute="top" secondItem="Ot6-H9-rMp" secondAttribute="bottom" constant="10" id="5kn-rc-NSL"/>
+                            <constraint firstAttribute="trailing" secondItem="QLC-VU-EkY" secondAttribute="trailing" constant="24" id="P7e-kV-f9M"/>
+                            <constraint firstAttribute="bottom" secondItem="QLC-VU-EkY" secondAttribute="bottom" id="P8V-Nh-U7b"/>
+                            <constraint firstItem="Ot6-H9-rMp" firstAttribute="top" secondItem="f1y-5R-s52" secondAttribute="top" constant="123" id="VNh-HW-qd7"/>
+                            <constraint firstItem="Ruw-b4-4BE" firstAttribute="leading" secondItem="H3Q-5b-o0N" secondAttribute="trailing" id="XGw-m1-Euj"/>
+                            <constraint firstItem="bZ8-Im-cmN" firstAttribute="centerY" secondItem="Ot6-H9-rMp" secondAttribute="centerY" constant="-1" id="Xec-pk-u3R"/>
+                            <constraint firstItem="Ruw-b4-4BE" firstAttribute="centerX" secondItem="f1y-5R-s52" secondAttribute="centerX" constant="27.5" id="Y50-h3-MFb"/>
+                            <constraint firstItem="UbD-jV-bGL" firstAttribute="leading" secondItem="f1y-5R-s52" secondAttribute="leading" id="cHR-Xa-4V8"/>
+                            <constraint firstItem="Ruw-b4-4BE" firstAttribute="centerY" secondItem="H3Q-5b-o0N" secondAttribute="centerY" constant="-1" id="gsQ-z9-Llp"/>
+                            <constraint firstItem="bZ8-Im-cmN" firstAttribute="centerX" secondItem="f1y-5R-s52" secondAttribute="centerX" constant="27.5" id="oKm-wi-2Y7"/>
+                            <constraint firstItem="bZ8-Im-cmN" firstAttribute="leading" secondItem="Ot6-H9-rMp" secondAttribute="trailing" id="scM-HS-4v3"/>
+                            <constraint firstItem="UbD-jV-bGL" firstAttribute="top" secondItem="f1y-5R-s52" secondAttribute="top" constant="64" id="tlF-Mr-5WY"/>
+                            <constraint firstItem="QLC-VU-EkY" firstAttribute="leading" secondItem="f1y-5R-s52" secondAttribute="leading" constant="32" id="yli-8O-HkY"/>
+                            <constraint firstAttribute="trailing" secondItem="UbD-jV-bGL" secondAttribute="trailing" id="yzY-YR-9BR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="f1y-5R-s52" secondAttribute="trailing" constant="3" id="0Wp-fr-r9a"/>
+                <constraint firstAttribute="bottom" secondItem="f1y-5R-s52" secondAttribute="bottom" constant="3" id="1TQ-oz-D4z"/>
+                <constraint firstItem="f1y-5R-s52" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Caa-89-wEb"/>
+                <constraint firstItem="f1y-5R-s52" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lHe-wN-PBy"/>
+            </constraints>
+            <size key="customSize" width="298" height="293"/>
+            <connections>
+                <outlet property="AmericanEnglishBtn" destination="H3Q-5b-o0N" id="f5S-BQ-W8h"/>
+                <outlet property="AmericanPronounceLabel" destination="Ruw-b4-4BE" id="ZMo-l3-jSz"/>
+                <outlet property="BritishEnglishBtn" destination="Ot6-H9-rMp" id="oMz-xR-cY9"/>
+                <outlet property="EnglishPronounceLabel" destination="bZ8-Im-cmN" id="gMr-gs-1Pc"/>
+                <outlet property="WordMeaningLabel" destination="QLC-VU-EkY" id="cgG-se-P7R"/>
+                <outlet property="cardView" destination="f1y-5R-s52" id="LQs-fE-4et"/>
+                <outlet property="singleWordLabel" destination="UbD-jV-bGL" id="yf8-Jj-wzO"/>
+            </connections>
+            <point key="canvasLocation" x="-26" y="29"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="发音" width="20" height="20"/>
+    </resources>
+</document>
