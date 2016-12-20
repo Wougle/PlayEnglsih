@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PECollectionTableViewController : UITableViewController
-@property(nonatomic ,assign) NSInteger type;
+@property(nonatomic ,assign) NSInteger list;
 @end

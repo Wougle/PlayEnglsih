@@ -132,180 +132,195 @@
 
 - (void)setData{
     tableMuArr = [[NSMutableArray alloc] init];
-    NSDictionary *tableDic1 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic2 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic3 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic4 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic5 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic6 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic7 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic8 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic9 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic10 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic11 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic12 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic13 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic14 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic15 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic16 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic17 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic18 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic19 = [[NSDictionary alloc] init];
     
-    tableDic1 = @{
-                  @"word":@"Like",
-                  @"pronounce":@"[laɪk]",
-                  @"USpronounce":@"",
-                  @"voice":@"like",
-                  @"mean":@"vt.喜欢；想； 想要； 喜欢做\nadj.相似的； 相同的；\nn.相类似的人[事物]； 喜好； 爱好；种类，类型\nadv.（非正式口语，代替 as）和…一样； 如； （非正式口语，思考说下句话、解释或举例时用）大概； 可能",
-                  };
-    tableDic2 = @{
-                  @"word":@"Down",
-                  @"pronounce":@"[daʊn]",
-                  @"USpronounce":@"",
-                  @"voice":@"down",
-                  @"mean":@"adv.（坐、倒、躺）下； 向下； （表示范围或顺序的限度）下至；\nadj.向下的； 沮丧的； 计算机或计算机系统停机； （以…）落后于对手的\nn.（鸟的）绒羽； 绒毛； 软毛； 汗毛\nvt.放下； （尤指大口或快速地）喝下； 使摔倒； 击落（敌机等）\nvi.[常用于祈使句中]下去； 下来； 卧倒； 下降",
-                  };
-    tableDic3 = @{
-                  @"word":@"Wind",
-                  @"pronounce":@"[wɪnd]",
-                  @"USpronounce":@"[wɪnd]",
-                  @"voice":@"wind",
-                  @"mean":@"n.风； 气流； 吞下的气； 管乐器\nvt.蜿蜒； 缠绕； 上发条； 使喘不过气来\nadj.管乐的；",
-                  };
-    tableDic4 = @{
-                  @"word":@"Sin",
-                  @"pronounce":@"[sɪn]",
-                  @"USpronounce":@"[sɪn]",
-                  @"voice":@"sin",
-                  @"mean":@"n.违背宗教[道德原则]的恶行； 罪恶，罪孽； 过错，罪过； 愚蠢的事，可耻的事\nvi.犯罪，犯过错；\nvt.犯罪；",
-                  };
-    tableDic5 = @{
-                  @"word":@"Already",
-                  @"pronounce":@"[ɔlˈrɛdi]",
-                  @"USpronounce":@"[ɔ:lˈredi]",
-                  @"voice":@"already",
-                  @"mean":@"adv.早已，已经； 先前；",
-                  };
-    tableDic6 = @{
-                  @"word":@"Free",
-                  @"pronounce":@"[fri]",
-                  @"USpronounce":@"[fri:]",
-                  @"voice":@"free",
-                  @"mean":@"adj.自由的； 免费的； 免税的； 空闲的\nadv.免费地； 自由地，无拘束地； 一帆风顺地；\nvt.免除； 释放； 使自由； 解救",
-                  };
-    tableDic7 = @{
-                  @"word":@"Autumn",
-                  @"pronounce":@"[ˈɔtəm]",
-                  @"USpronounce":@"[ˈɔ:təm]",
-                  @"voice":@"autumn",
-                  @"mean":@"n.秋； 秋天； 成熟期； 渐衰期\nadj.秋天的； 秋季的；",
-                  };
-    tableDic8 = @{
-                  @"word":@"Blue",
-                  @"pronounce":@"[blu]",
-                  @"USpronounce":@"[blu:]",
-                  @"voice":@"blue",
-                  @"mean":@"n.蓝色； [复数]蓝色制服； 蓝颜料；\nadj.蓝色的； 沮丧的，忧郁的； 下流的；\nvt.把…染成蓝色； 使成蓝色； 给…用上蓝剂； 用上蓝剂于\nvi.变成蓝色，呈蓝色",
-                  };
-    tableDic9 = @{
-                  @"word":@"Never",
-                  @"pronounce":@"[ˈnɛvɚ]",
-                  @"USpronounce":@"[ˈnevə(r)]",
-                  @"voice":@"never",
-                  @"mean":@"adv.从不，从来没有； 一点也不，决不； <口>不会…吧，没有； 不曾",
-                  };
-    tableDic10 = @{
-                  @"word":@"Dark",
-                  @"pronounce":@"[dɑrk]",
-                  @"USpronounce":@"[dɑ:k]",
-                  @"voice":@"dark",
-                  @"mean":@"adj.黑暗的； 乌黑的； 忧郁的； 神秘的\nn.黑暗； 暗色； 暗处；",
-                  };
-    tableDic11 = @{
-                  @"word":@"Forget",
-                  @"pronounce":@"[fərˈget]",
-                  @"USpronounce":@"[fəˈget]",
-                  @"voice":@"forget",
-                  @"mean":@"vt.忘记，忘却； 忽略，疏忽； 遗落； 忘掉\nvi.忘记； 忽视",
-                  };
-    tableDic12 = @{
-                  @"word":@"Red",
-                  @"pronounce":@"[rɛd]",
-                  @"USpronounce":@"[red]",
-                  @"voice":@"red",
-                  @"mean":@"adj.红色的； （脸）涨红的； 烧红的； 红头发的\nn.红色； 红衣服； 红颜料； 红葡萄酒",
-                  };
-    tableDic13 = @{
-                  @"word":@"Right",
-                  @"pronounce":@"[raɪt]",
-                  @"USpronounce":@"[raɪt]",
-                  @"voice":@"right",
-                  @"mean":@"adv.立刻，马上； 向右，右边； 恰当地； 一直\nadj.右方的； 正确的； 合适的； 好的，正常的\nn.正确，正当； 右边； 权利； 右手\nvt.纠正； 扶直，使正； 整理； 补偿\nvi.（船舶等）复正，恢复平稳；",
-                  };
-    tableDic14 = @{
-                  @"word":@"Easy",
-                  @"pronounce":@"[ˈizi]",
-                  @"USpronounce":@"[ˈi:zi]",
-                  @"voice":@"easy",
-                  @"mean":@"adj.容易的； 舒适的； 宽裕的； 从容的\nadv.容易地； 不费力地； 悠闲地； 缓慢地\nvi.停止划桨（常用作命令）；\nvt.向（水手或划手）发出停划命令；",
-                  };
-    tableDic15 = @{
-                  @"word":@"Old",
-                  @"pronounce":@"[oʊld]",
-                  @"USpronounce":@"[əʊld]",
-                  @"voice":@"old",
-                  @"mean":@"adj.老的； 古老的； 以前的； （用于指称被替代的东西）原来的\nn.古时；",
-                  };
-    tableDic16 = @{
-                  @"word":@"Know",
-                  @"pronounce":@"[noʊ]",
-                  @"USpronounce":@"[nəʊ]",
-                  @"voice":@"know",
-                  @"mean":@"v.知道； 了解； 认识； 确信\nn.知情；",
-                  };
-    tableDic17 = @{
-                  @"word":@"Myself",
-                  @"pronounce":@"[maɪˈsɛlf]",
-                  @"USpronounce":@"[maɪˈself]",
-                  @"voice":@"myself",
-                  @"mean":@"pron.我自己，亲自；",
-                  };
-    tableDic18 = @{
-                  @"word":@"Impossible",
-                  @"pronounce":@"[ɪmˈpɑsəbl]",
-                  @"USpronounce":@"[ɪmˈpɒsəbl]",
-                  @"voice":@"impossible",
-                  @"mean":@"adj.不可能的，做不到的； 难以忍受的； 不会有的，不能相信的；\nn.不可能； 不可能的事",
-                  };
-    tableDic19 = @{
-                  @"word":@"Back",
-                  @"pronounce":@"[bæk]",
-                  @"USpronounce":@"[bæk]",
-                  @"voice":@"back",
-                  @"mean":@"n.背，背部； 背面，反面； 后面，后部； （椅子等的）靠背\nvt.使后退； 支持； 加背书于； 下赌注于\nvi.后退； 倒退；\nadj.背部的； 后面的； 以前的； 拖欠的\nadv.以前； 向后地；",
-                  };
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [HandlerBusiness ServiceWithApicode:ApiCodeGetWordLibrary Parameters:nil Success:^(id data , id msg){
+        
+        for (int i = 0; i < [data count]; i++) {
+            [tableMuArr addObject:data[i]];
+        }
+        
+        [_wordTableView reloadData];
+    }Failed:^(NSInteger code ,id errorMsg){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }Complete:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
     
-    
-    [tableMuArr addObject:tableDic1];
-    [tableMuArr addObject:tableDic2];
-    [tableMuArr addObject:tableDic3];
-    [tableMuArr addObject:tableDic4];
-    [tableMuArr addObject:tableDic5];
-    [tableMuArr addObject:tableDic6];
-    [tableMuArr addObject:tableDic7];
-    [tableMuArr addObject:tableDic8];
-    [tableMuArr addObject:tableDic9];
-    [tableMuArr addObject:tableDic10];
-    [tableMuArr addObject:tableDic11];
-    [tableMuArr addObject:tableDic12];
-    [tableMuArr addObject:tableDic13];
-    [tableMuArr addObject:tableDic14];
-    [tableMuArr addObject:tableDic15];
-    [tableMuArr addObject:tableDic16];
-    [tableMuArr addObject:tableDic17];
-    [tableMuArr addObject:tableDic18];
-    [tableMuArr addObject:tableDic19];
+//    NSDictionary *tableDic1 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic2 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic3 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic4 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic5 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic6 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic7 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic8 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic9 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic10 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic11 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic12 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic13 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic14 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic15 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic16 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic17 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic18 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic19 = [[NSDictionary alloc] init];
+//    
+//    tableDic1 = @{
+//                  @"word":@"Like",
+//                  @"pronounce":@"[laɪk]",
+//                  @"USpronounce":@"",
+//                  @"voice":@"like",
+//                  @"mean":@"vt.喜欢；想； 想要； 喜欢做\nadj.相似的； 相同的；\nn.相类似的人[事物]； 喜好； 爱好；种类，类型\nadv.（非正式口语，代替 as）和…一样； 如； （非正式口语，思考说下句话、解释或举例时用）大概； 可能",
+//                  };
+//    tableDic2 = @{
+//                  @"word":@"Down",
+//                  @"pronounce":@"[daʊn]",
+//                  @"USpronounce":@"",
+//                  @"voice":@"down",
+//                  @"mean":@"adv.（坐、倒、躺）下； 向下； （表示范围或顺序的限度）下至；\nadj.向下的； 沮丧的； 计算机或计算机系统停机； （以…）落后于对手的\nn.（鸟的）绒羽； 绒毛； 软毛； 汗毛\nvt.放下； （尤指大口或快速地）喝下； 使摔倒； 击落（敌机等）\nvi.[常用于祈使句中]下去； 下来； 卧倒； 下降",
+//                  };
+//    tableDic3 = @{
+//                  @"word":@"Wind",
+//                  @"pronounce":@"[wɪnd]",
+//                  @"USpronounce":@"[wɪnd]",
+//                  @"voice":@"wind",
+//                  @"mean":@"n.风； 气流； 吞下的气； 管乐器\nvt.蜿蜒； 缠绕； 上发条； 使喘不过气来\nadj.管乐的；",
+//                  };
+//    tableDic4 = @{
+//                  @"word":@"Sin",
+//                  @"pronounce":@"[sɪn]",
+//                  @"USpronounce":@"[sɪn]",
+//                  @"voice":@"sin",
+//                  @"mean":@"n.违背宗教[道德原则]的恶行； 罪恶，罪孽； 过错，罪过； 愚蠢的事，可耻的事\nvi.犯罪，犯过错；\nvt.犯罪；",
+//                  };
+//    tableDic5 = @{
+//                  @"word":@"Already",
+//                  @"pronounce":@"[ɔlˈrɛdi]",
+//                  @"USpronounce":@"[ɔ:lˈredi]",
+//                  @"voice":@"already",
+//                  @"mean":@"adv.早已，已经； 先前；",
+//                  };
+//    tableDic6 = @{
+//                  @"word":@"Free",
+//                  @"pronounce":@"[fri]",
+//                  @"USpronounce":@"[fri:]",
+//                  @"voice":@"free",
+//                  @"mean":@"adj.自由的； 免费的； 免税的； 空闲的\nadv.免费地； 自由地，无拘束地； 一帆风顺地；\nvt.免除； 释放； 使自由； 解救",
+//                  };
+//    tableDic7 = @{
+//                  @"word":@"Autumn",
+//                  @"pronounce":@"[ˈɔtəm]",
+//                  @"USpronounce":@"[ˈɔ:təm]",
+//                  @"voice":@"autumn",
+//                  @"mean":@"n.秋； 秋天； 成熟期； 渐衰期\nadj.秋天的； 秋季的；",
+//                  };
+//    tableDic8 = @{
+//                  @"word":@"Blue",
+//                  @"pronounce":@"[blu]",
+//                  @"USpronounce":@"[blu:]",
+//                  @"voice":@"blue",
+//                  @"mean":@"n.蓝色； [复数]蓝色制服； 蓝颜料；\nadj.蓝色的； 沮丧的，忧郁的； 下流的；\nvt.把…染成蓝色； 使成蓝色； 给…用上蓝剂； 用上蓝剂于\nvi.变成蓝色，呈蓝色",
+//                  };
+//    tableDic9 = @{
+//                  @"word":@"Never",
+//                  @"pronounce":@"[ˈnɛvɚ]",
+//                  @"USpronounce":@"[ˈnevə(r)]",
+//                  @"voice":@"never",
+//                  @"mean":@"adv.从不，从来没有； 一点也不，决不； <口>不会…吧，没有； 不曾",
+//                  };
+//    tableDic10 = @{
+//                  @"word":@"Dark",
+//                  @"pronounce":@"[dɑrk]",
+//                  @"USpronounce":@"[dɑ:k]",
+//                  @"voice":@"dark",
+//                  @"mean":@"adj.黑暗的； 乌黑的； 忧郁的； 神秘的\nn.黑暗； 暗色； 暗处；",
+//                  };
+//    tableDic11 = @{
+//                  @"word":@"Forget",
+//                  @"pronounce":@"[fərˈget]",
+//                  @"USpronounce":@"[fəˈget]",
+//                  @"voice":@"forget",
+//                  @"mean":@"vt.忘记，忘却； 忽略，疏忽； 遗落； 忘掉\nvi.忘记； 忽视",
+//                  };
+//    tableDic12 = @{
+//                  @"word":@"Red",
+//                  @"pronounce":@"[rɛd]",
+//                  @"USpronounce":@"[red]",
+//                  @"voice":@"red",
+//                  @"mean":@"adj.红色的； （脸）涨红的； 烧红的； 红头发的\nn.红色； 红衣服； 红颜料； 红葡萄酒",
+//                  };
+//    tableDic13 = @{
+//                  @"word":@"Right",
+//                  @"pronounce":@"[raɪt]",
+//                  @"USpronounce":@"[raɪt]",
+//                  @"voice":@"right",
+//                  @"mean":@"adv.立刻，马上； 向右，右边； 恰当地； 一直\nadj.右方的； 正确的； 合适的； 好的，正常的\nn.正确，正当； 右边； 权利； 右手\nvt.纠正； 扶直，使正； 整理； 补偿\nvi.（船舶等）复正，恢复平稳；",
+//                  };
+//    tableDic14 = @{
+//                  @"word":@"Easy",
+//                  @"pronounce":@"[ˈizi]",
+//                  @"USpronounce":@"[ˈi:zi]",
+//                  @"voice":@"easy",
+//                  @"mean":@"adj.容易的； 舒适的； 宽裕的； 从容的\nadv.容易地； 不费力地； 悠闲地； 缓慢地\nvi.停止划桨（常用作命令）；\nvt.向（水手或划手）发出停划命令；",
+//                  };
+//    tableDic15 = @{
+//                  @"word":@"Old",
+//                  @"pronounce":@"[oʊld]",
+//                  @"USpronounce":@"[əʊld]",
+//                  @"voice":@"old",
+//                  @"mean":@"adj.老的； 古老的； 以前的； （用于指称被替代的东西）原来的\nn.古时；",
+//                  };
+//    tableDic16 = @{
+//                  @"word":@"Know",
+//                  @"pronounce":@"[noʊ]",
+//                  @"USpronounce":@"[nəʊ]",
+//                  @"voice":@"know",
+//                  @"mean":@"v.知道； 了解； 认识； 确信\nn.知情；",
+//                  };
+//    tableDic17 = @{
+//                  @"word":@"Myself",
+//                  @"pronounce":@"[maɪˈsɛlf]",
+//                  @"USpronounce":@"[maɪˈself]",
+//                  @"voice":@"myself",
+//                  @"mean":@"pron.我自己，亲自；",
+//                  };
+//    tableDic18 = @{
+//                  @"word":@"Impossible",
+//                  @"pronounce":@"[ɪmˈpɑsəbl]",
+//                  @"USpronounce":@"[ɪmˈpɒsəbl]",
+//                  @"voice":@"impossible",
+//                  @"mean":@"adj.不可能的，做不到的； 难以忍受的； 不会有的，不能相信的；\nn.不可能； 不可能的事",
+//                  };
+//    tableDic19 = @{
+//                  @"word":@"Back",
+//                  @"pronounce":@"[bæk]",
+//                  @"USpronounce":@"[bæk]",
+//                  @"voice":@"back",
+//                  @"mean":@"n.背，背部； 背面，反面； 后面，后部； （椅子等的）靠背\nvt.使后退； 支持； 加背书于； 下赌注于\nvi.后退； 倒退；\nadj.背部的； 后面的； 以前的； 拖欠的\nadv.以前； 向后地；",
+//                  };
+//    
+//    
+//    [tableMuArr addObject:tableDic1];
+//    [tableMuArr addObject:tableDic2];
+//    [tableMuArr addObject:tableDic3];
+//    [tableMuArr addObject:tableDic4];
+//    [tableMuArr addObject:tableDic5];
+//    [tableMuArr addObject:tableDic6];
+//    [tableMuArr addObject:tableDic7];
+//    [tableMuArr addObject:tableDic8];
+//    [tableMuArr addObject:tableDic9];
+//    [tableMuArr addObject:tableDic10];
+//    [tableMuArr addObject:tableDic11];
+//    [tableMuArr addObject:tableDic12];
+//    [tableMuArr addObject:tableDic13];
+//    [tableMuArr addObject:tableDic14];
+//    [tableMuArr addObject:tableDic15];
+//    [tableMuArr addObject:tableDic16];
+//    [tableMuArr addObject:tableDic17];
+//    [tableMuArr addObject:tableDic18];
+//    [tableMuArr addObject:tableDic19];
 }
 
 #pragma mark TableViewDelegat
@@ -634,9 +649,9 @@
         }
         
         CGFloat height = 144;
-        cell.wordLabel.text = tableMuArr[wordId][@"word"];
-        cell.pronounceLabel.text = tableMuArr[wordId][@"pronounce"];
-        cell.voiceURL = tableMuArr[wordId][@"voice"];
+        cell.wordLabel.text = tableMuArr[wordId][@"wordName"];
+        cell.pronounceLabel.text = tableMuArr[wordId][@"USPronounce"];
+        cell.voiceURL = tableMuArr[wordId][@"USVoiceURL"];
         cell.delegate = self;
         cell.meansLabel.text = tableMuArr[wordId][@"mean"];
         cell.meansLabel.numberOfLines = 0;
@@ -886,7 +901,7 @@
     
     NSLog(@"%@。",rangeStr);
     for (int i = 0; i < tableMuArr.count; i++) {
-        NSString *str = tableMuArr[i][@"voice"];
+        NSString *str = tableMuArr[i][@"USVoiceURL"];
         if ([str compare:rangeStr]==NSOrderedSame) {
             _foldBtn.selected = NO;
             isFold = 0;

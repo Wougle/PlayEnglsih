@@ -12,11 +12,11 @@
 static NSString *const StudyProgressTableViewCellIdentfiy = @"StudyProgressTableViewCellIdentfiy";
 
 @interface PEProgressViewController ()<UITableViewDelegate,UITableViewDataSource>{
-    NSArray *tableViewCellImageArr;
+    NSMutableArray *tableViewCellImageArr;
     
-    NSArray *tableViewCellLabelArr;
+    NSMutableArray *tableViewCellLabelArr;
     
-    NSArray *tableViewCellTimeArr;
+    NSMutableArray *tableViewCellTimeArr;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -51,9 +51,30 @@ static NSString *const StudyProgressTableViewCellIdentfiy = @"StudyProgressTable
 }
 
 - (void)setData{
-    tableViewCellImageArr = [NSArray arrayWithObjects:@"Red",@"trim",@"She", nil];
-    tableViewCellLabelArr = [NSArray arrayWithObjects:@"Taylor Swift\n-----\nRED",@"Taylor Swift\n-----\nRED",@"Ed Sheeran\n-----\nShe", nil];
-    tableViewCellTimeArr = [NSArray arrayWithObjects:@"12分钟前", @"57分钟前", @"10小时前", nil];
+    
+    tableViewCellImageArr = [[NSMutableArray alloc] init];
+    tableViewCellLabelArr = [[NSMutableArray alloc] init];
+    tableViewCellTimeArr = [[NSMutableArray alloc] init];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [HandlerBusiness ServiceWithApicode:ApiCodeGetStudyProgress Parameters:nil Success:^(id data , id msg){
+        for (int i=0; i < [data count]; i++) {
+            [tableViewCellImageArr addObject:data[i][@"image"]];
+            [tableViewCellLabelArr addObject:data[i][@"name"]];
+            [tableViewCellTimeArr addObject:data[i][@"time"]];
+        }
+        [self.tableView reloadData];
+
+    }Failed:^(NSInteger code ,id errorMsg){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }Complete:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+
+    
+//    tableViewCellImageArr = [NSArray arrayWithObjects:@"Red",@"trim",@"She", nil];
+//    tableViewCellLabelArr = [NSArray arrayWithObjects:@"Taylor Swift\n-----\nRED",@"Taylor Swift\n-----\nRED",@"Ed Sheeran\n-----\nShe", nil];
+//    tableViewCellTimeArr = [NSArray arrayWithObjects:@"12分钟前", @"57分钟前", @"10小时前", nil];
 }
 
 - (void)setNavigation{

@@ -74,6 +74,7 @@
 		3CC042C11DE583C600468526 /* PECollectionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC042BF1DE583C600468526 /* PECollectionTableViewController.xib */; };
 		3CC042C51DE588DF00468526 /* CollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC042C31DE588DF00468526 /* CollectionTableViewCell.m */; };
 		3CC042C61DE588DF00468526 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC042C41DE588DF00468526 /* CollectionTableViewCell.xib */; };
+		3CD727BA1DFE76A1007960C6 /* HandlerBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD727B91DFE76A1007960C6 /* HandlerBusiness.m */; };
 		3CDBCE971DF2AC540003375F /* like.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CDBCE961DF2AC540003375F /* like.mp3 */; };
 		3CDBCE991DF2AC7A0003375F /* down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CDBCE981DF2AC7A0003375F /* down.mp3 */; };
 		3CDBCE9B1DF2AC8B0003375F /* wind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CDBCE9A1DF2AC8B0003375F /* wind.mp3 */; };
@@ -240,6 +241,8 @@
 		3CC042C21DE588DF00468526 /* CollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionTableViewCell.h; path = Class/Module/Home/Views/CollectionTableViewCell.h; sourceTree = "<group>"; };
 		3CC042C31DE588DF00468526 /* CollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionTableViewCell.m; path = Class/Module/Home/Views/CollectionTableViewCell.m; sourceTree = "<group>"; };
 		3CC042C41DE588DF00468526 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionTableViewCell.xib; path = Class/Module/Home/Views/CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		3CD727B81DFE76A1007960C6 /* HandlerBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandlerBusiness.h; path = Category/HandlerBusiness.h; sourceTree = "<group>"; };
+		3CD727B91DFE76A1007960C6 /* HandlerBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandlerBusiness.m; path = Category/HandlerBusiness.m; sourceTree = "<group>"; };
 		3CDBCE961DF2AC540003375F /* like.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = like.mp3; sourceTree = "<group>"; };
 		3CDBCE981DF2AC7A0003375F /* down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = down.mp3; sourceTree = "<group>"; };
 		3CDBCE9A1DF2AC8B0003375F /* wind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wind.mp3; sourceTree = "<group>"; };
@@ -691,6 +694,7 @@
 		3CBDDBCD1D978774006B7E42 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3CD727B71DFE7634007960C6 /* AFNetworking */,
 				3C43573F1DF97267009E8481 /* HUD */,
 				3C99C48C1DF57DF500C7C1DA /* GCPlaceholderTextView */,
 				3C4542CE1DE99EA3002721EF /* PYSearch */,
@@ -699,6 +703,15 @@
 				3C37A1501DC0D7E6000FBB89 /* PPLabel */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		3CD727B71DFE7634007960C6 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				3CD727B81DFE76A1007960C6 /* HandlerBusiness.h */,
+				3CD727B91DFE76A1007960C6 /* HandlerBusiness.m */,
+			);
+			name = AFNetworking;
 			sourceTree = "<group>";
 		};
 		3CE591861D98F9F300FD59CB /* Views */ = {
@@ -1287,6 +1300,7 @@
 				3C4542DC1DE99EB1002721EF /* PYSearchConst.m in Sources */,
 				3C4542DD1DE99EB1002721EF /* PYSearchSuggestionViewController.m in Sources */,
 				3C99C4931DF57E3000C7C1DA /* PESubmitViewController.m in Sources */,
+				3CD727BA1DFE76A1007960C6 /* HandlerBusiness.m in Sources */,
 				3C4F55FD1DD6CFBA0020A1D0 /* personalCenterHeadView.m in Sources */,
 				3C6C16D41DD836950097C397 /* RLSSayButtonView.m in Sources */,
 				3CBDDBC61D977564006B7E42 /* PEHomeTableViewController.m in Sources */,

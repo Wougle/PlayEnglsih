@@ -22,10 +22,15 @@ static NSString *const kCollectionTableViewCellIdentify = @"kCollectionTableView
 
 @implementation PECollectionTableViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self loadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadData];
-    
+
     self.navigationItem.title = @"热门收藏";
     // 下面两个属性的设置是与translucent为NO,坐标变换的效果一样
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -39,130 +44,146 @@ static NSString *const kCollectionTableViewCellIdentify = @"kCollectionTableView
 - (void)loadData{
 
     tableMuArr = [[NSMutableArray alloc] init];
-    NSDictionary *tableDic1 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic2 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic3 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic4 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic5 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic6 = [[NSDictionary alloc] init];
-    NSDictionary *tableDic7 = [[NSDictionary alloc] init];
-
     
-    if (self.type == 0) {
-        tableDic1 = @{
-                      @"name":@"Taylor Swift",
-                      @"song":@"Red",
-                      };
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [HandlerBusiness ServiceWithApicode:ApiCodeGetMusicList Parameters:nil Success:^(id data , id msg){
+        for (int i=0; i < [data count]; i++) {
+            if ([data[i][@"musicList"] integerValue] == self.list + 1) {
+                [tableMuArr addObject:data[i]];
+            }
+        }
+        [self.tableView reloadData];
         
-        tableDic2 = @{
-                      @"name":@"Taylor Swift",
-                      @"song":@"State of Grace 恩宠状态",
-                      };
-        
-        tableDic3 = @{
-                      @"name":@"Taylor Swift / Dan Wilson",
-                      @"song":@"Treacherous 危险关系",
-                      };
-        
-        tableDic4 = @{
-                      @"name":@"Taylor Swift / Gary Litery",
-                      @"song":@"The Last Time 最后一刻",
-                      };
-        
-        tableDic5 = @{
-                      @"name":@"Taylor Swift / Marx Martin",
-                      @"song":@"We Are Never Ever Get Back Together",
-                      };
-        
-        tableDic6 = @{
-                      @"name":@"Taylor Swift",
-                      @"song":@"All Too Well 回忆太清晰",
-                      };
-        
-        tableDic7 = @{
-                      @"name":@"Taylor Swift",
-                      @"song":@"The Lucky One 幸运儿",
-                      };
-    }
-    else if (self.type == 1){
-        tableDic1 = @{
-                      @"name":@"Tony Christie",
-                      @"song":@"I'M Not In Love",
-                      };
-        
-        tableDic2 = @{
-                      @"name":@"P!nk",
-                      @"song":@"Get The Party Started",
-                      };
-        
-        tableDic3 = @{
-                      @"name":@"Katy Perry",
-                      @"song":@"I Kissed A Girl",
-                      };
-        
-        tableDic4 = @{
-                      @"name":@"Queen",
-                      @"song":@"We Are The Champion",
-                      };
-        
-        tableDic5 = @{
-                      @"name":@"Lady Antebellum",
-                      @"song":@"Need You Now",
-                      };
-        
-        tableDic6 = @{
-                      @"name":@"Bon Jovi",
-                      @"song":@"Wanted Dead Or Alive",
-                      };
-        tableDic7 = @{
-                      @"name":@"Taylor Swift",
-                      @"song":@"The Lucky One",
-                      };
-    }
-    else{
-        tableDic1 = @{
-                      @"name":@"Bruno Mars / PhilipLawrence",
-                      @"song":@"Show Me",
-                      };
-        
-        tableDic2 = @{
-                      @"name":@"Bruno Mars",
-                      @"song":@"Money Make Her Smile",
-                      };
-        
-        tableDic3 = @{
-                      @"name":@"Bruno Mars / Ari Levine",
-                      @"song":@"If I Knew",
-                      };
-        
-        tableDic4 = @{
-                      @"name":@"Bruno Mars / Jeff Bhasker",
-                      @"song":@"Locked Out of Heaven",
-                      };
-        
-        tableDic5 = @{
-                      @"name":@"Bruno Mars",
-                      @"song":@"Moonshine",
-                      };
-        
-        tableDic6 = @{
-                      @"name":@"Bruno Mars",
-                      @"song":@"When I Was Your Man",
-                      };
-        tableDic7 = @{
-                      @"name":@"Bruno Mars / Ari Levine",
-                      @"song":@"The Lucky One",
-                      };
-    }
+    }Failed:^(NSInteger code ,id errorMsg){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }Complete:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
     
-    
-    [tableMuArr addObject:tableDic1];
-    [tableMuArr addObject:tableDic2];
-    [tableMuArr addObject:tableDic3];
-    [tableMuArr addObject:tableDic4];
-    [tableMuArr addObject:tableDic5];
-    [tableMuArr addObject:tableDic6];
-    [tableMuArr addObject:tableDic7];
+//    NSDictionary *tableDic1 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic2 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic3 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic4 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic5 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic6 = [[NSDictionary alloc] init];
+//    NSDictionary *tableDic7 = [[NSDictionary alloc] init];
+//
+//    
+//    if (self.list == 0) {
+//        tableDic1 = @{
+//                      @"name":@"Taylor Swift",
+//                      @"song":@"Red",
+//                      };
+//        
+//        tableDic2 = @{
+//                      @"name":@"Taylor Swift",
+//                      @"song":@"State of Grace 恩宠状态",
+//                      };
+//        
+//        tableDic3 = @{
+//                      @"name":@"Taylor Swift / Dan Wilson",
+//                      @"song":@"Treacherous 危险关系",
+//                      };
+//        
+//        tableDic4 = @{
+//                      @"name":@"Taylor Swift / Gary Litery",
+//                      @"song":@"The Last Time 最后一刻",
+//                      };
+//        
+//        tableDic5 = @{
+//                      @"name":@"Taylor Swift / Marx Martin",
+//                      @"song":@"We Are Never Ever Get Back Together",
+//                      };
+//        
+//        tableDic6 = @{
+//                      @"name":@"Taylor Swift",
+//                      @"song":@"All Too Well 回忆太清晰",
+//                      };
+//        
+//        tableDic7 = @{
+//                      @"name":@"Taylor Swift",
+//                      @"song":@"The Lucky One 幸运儿",
+//                      };
+//    }
+//    else if (self.list == 1){
+//        tableDic1 = @{
+//                      @"name":@"Tony Christie",
+//                      @"song":@"I'M Not In Love",
+//                      };
+//        
+//        tableDic2 = @{
+//                      @"name":@"P!nk",
+//                      @"song":@"Get The Party Started",
+//                      };
+//        
+//        tableDic3 = @{
+//                      @"name":@"Katy Perry",
+//                      @"song":@"I Kissed A Girl",
+//                      };
+//        
+//        tableDic4 = @{
+//                      @"name":@"Queen",
+//                      @"song":@"We Are The Champion",
+//                      };
+//        
+//        tableDic5 = @{
+//                      @"name":@"Lady Antebellum",
+//                      @"song":@"Need You Now",
+//                      };
+//        
+//        tableDic6 = @{
+//                      @"name":@"Bon Jovi",
+//                      @"song":@"Wanted Dead Or Alive",
+//                      };
+//        tableDic7 = @{
+//                      @"name":@"Taylor Swift",
+//                      @"song":@"The Lucky One",
+//                      };
+//    }
+//    else{
+//        tableDic1 = @{
+//                      @"name":@"Bruno Mars / PhilipLawrence",
+//                      @"song":@"Show Me",
+//                      };
+//        
+//        tableDic2 = @{
+//                      @"name":@"Bruno Mars",
+//                      @"song":@"Money Make Her Smile",
+//                      };
+//        
+//        tableDic3 = @{
+//                      @"name":@"Bruno Mars / Ari Levine",
+//                      @"song":@"If I Knew",
+//                      };
+//        
+//        tableDic4 = @{
+//                      @"name":@"Bruno Mars / Jeff Bhasker",
+//                      @"song":@"Locked Out of Heaven",
+//                      };
+//        
+//        tableDic5 = @{
+//                      @"name":@"Bruno Mars",
+//                      @"song":@"Moonshine",
+//                      };
+//        
+//        tableDic6 = @{
+//                      @"name":@"Bruno Mars",
+//                      @"song":@"When I Was Your Man",
+//                      };
+//        tableDic7 = @{
+//                      @"name":@"Bruno Mars / Ari Levine",
+//                      @"song":@"The Lucky One",
+//                      };
+//    }
+//    
+//    
+//    [tableMuArr addObject:tableDic1];
+//    [tableMuArr addObject:tableDic2];
+//    [tableMuArr addObject:tableDic3];
+//    [tableMuArr addObject:tableDic4];
+//    [tableMuArr addObject:tableDic5];
+//    [tableMuArr addObject:tableDic6];
+//    [tableMuArr addObject:tableDic7];
 }
 
 - (void)createTableView
@@ -175,7 +196,7 @@ static NSString *const kCollectionTableViewCellIdentify = @"kCollectionTableView
     // 添加头视图 在头视图上添加ImageView
     self.header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, pictureHeight)];
     _pictureImageView = [[UIImageView alloc] initWithFrame:_header.bounds];
-    _pictureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"collection%ld",self.type+1]];
+    _pictureImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"collection%ld",self.list+1]];
     /*
      重要的属性设置
      */
@@ -219,8 +240,8 @@ static NSString *const kCollectionTableViewCellIdentify = @"kCollectionTableView
                 ][0];
     }
     cell.numberLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row+1];
-    cell.songLabel.text = tableMuArr[indexPath.row][@"song"];
-    cell.nameLabel.text = tableMuArr[indexPath.row][@"name"];
+    cell.songLabel.text = tableMuArr[indexPath.row][@"musicName"];
+    cell.nameLabel.text = tableMuArr[indexPath.row][@"singerName"];
    
     return cell;
 }

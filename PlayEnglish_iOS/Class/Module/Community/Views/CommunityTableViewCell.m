@@ -43,7 +43,6 @@
         [self.personalCollectBtn setSelected:NO];
         followFlag = 0;
     }
-    
 }
 
 - (IBAction)replyAction:(id)sender {
@@ -52,7 +51,7 @@
 
 - (IBAction)likeAction:(id)sender {
     if (likeR == 0) {
-        likeFlag = [self.delegate FollowBtnCellDelegate:self.index];
+        likeFlag = [self.delegate LikeBtnCellDelegate:self.index];
         likeR = 1;
     }
 

@@ -43,4 +43,6 @@
 
 @property (nonatomic, assign)NSInteger likePerson;
 
+@property (nonatomic, assign)NSInteger commID;
+
 @end

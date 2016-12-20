@@ -346,23 +346,50 @@ static NSString *const kPersonalDateTableViewCell = @"kPersonalDateTableViewCell
 #pragma mark - button action
 
 - (void)toApprove{
-    if (nickStr.length != 0) {
-        [UserDefaultsUtils saveValue:nickStr forKey:@"nickName"];
+    if (nickStr.length == 0) {
+        nickStr = [UserDefaultsUtils valueWithKey:@"nickName"];
     }
-    if (sexStr.length != 0) {
-        [UserDefaultsUtils saveValue:sexStr forKey:@"sex"];
+    if (sexStr.length == 0) {
+        sexStr = [UserDefaultsUtils valueWithKey:@"sex"];
     }
-    if (cityStr.length != 0) {
-        [UserDefaultsUtils saveValue:cityStr forKey:@"city"];
+    if (cityStr.length == 0) {
+        cityStr = [UserDefaultsUtils valueWithKey:@"city"];
     }
-    if (phoneStr.length != 0) {
-        [UserDefaultsUtils saveValue:phoneStr forKey:@"phone"];
+    if (phoneStr.length == 0) {
+        phoneStr = [UserDefaultsUtils valueWithKey:@"phone"];
     }
-    if (signStr.length != 0) {
-        [UserDefaultsUtils saveValue:signStr forKey:@"sign"];
+    if (signStr.length == 0) {
+        signStr = [UserDefaultsUtils valueWithKey:@"sign"];
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
+    NSDictionary *parameters = [[NSMutableDictionary alloc] init];
+    parameters = @{
+                 @"userID":[UserDefaultsUtils valueWithKey:@"userID"],
+                 @"headImage":[UserDefaultsUtils valueWithKey:@"headImage"],
+                 @"userName":nickStr,
+                 @"userSex":sexStr,
+                 @"userAddress":cityStr,
+                 @"userPhone":phoneStr,
+                 @"userSign":signStr,
+                 };
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [HandlerBusiness ServiceWithApicode:ApiCodeChangeUserData Parameters:parameters Success:^(id data , id msg){
+        
+        UIAlertController *alterController = [UIAlertController alertControllerWithTitle:ALERT_TITLE message:@"修改成功！" preferredStyle:UIAlertControllerStyleAlert];
+        [alterController addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }]];
+        [self presentViewController:alterController animated:YES completion:nil];
+        
+    }Failed:^(NSInteger code ,id errorMsg){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }Complete:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
 }
 
 @end

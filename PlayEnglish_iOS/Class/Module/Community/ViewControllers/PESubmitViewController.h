@@ -12,5 +12,6 @@
     GCPlaceholderTextView *titleTextView;
 }
 
+@property (nonatomic, assign) int commIdLocal;
 
 @end

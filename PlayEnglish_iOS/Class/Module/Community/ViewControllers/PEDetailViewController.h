@@ -13,5 +13,6 @@
 @property (assign,nonatomic) NSInteger viewType; //1 社区   2 我的收藏
 @property (assign,nonatomic) BOOL isReply; //是否是点击回复进来
 @property (weak, nonatomic) IBOutlet UITextView *messageField;
+@property (nonatomic, assign)NSInteger commID;
 
 @end

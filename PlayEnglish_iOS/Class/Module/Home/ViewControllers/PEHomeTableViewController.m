@@ -35,6 +35,8 @@ static NSString *const kHomeTableViewCellIdentify = @"kHomeTableViewCellIdentify
     
     NSMutableArray *labelMutableArr;
     
+    NSMutableArray *tableMuArr;
+    
     CGSize collectionCellSize;
 
     
@@ -57,6 +59,8 @@ static NSString *const kHomeTableViewCellIdentify = @"kHomeTableViewCellIdentify
     [self setArray];
     
     [self setPersonData];
+    
+    [self setRSL];
 }
 
 - (void)viewDidLoad {
@@ -76,13 +80,49 @@ static NSString *const kHomeTableViewCellIdentify = @"kHomeTableViewCellIdentify
 }
 
 - (void)setPersonData{
-    [UserDefaultsUtils saveValue:@"headImage" forKey:@"headImage"];
-    [UserDefaultsUtils saveValue:@"郑甜甜" forKey:@"nickName"];
-    [UserDefaultsUtils saveValue:@"女" forKey:@"sex"];
-    [UserDefaultsUtils saveValue:@"杭州" forKey:@"city"];
-    [UserDefaultsUtils saveValue:@"13788888888" forKey:@"phone"];
-    [UserDefaultsUtils saveValue:@"好好好好学英语" forKey:@"sign"];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [HandlerBusiness ServiceWithApicode:ApiCodeGetUserData Parameters:nil Success:^(id data , id msg){
+        
+        [UserDefaultsUtils saveValue:data[0][@"userID"] forKey:@"userID"];
+        [UserDefaultsUtils saveValue:data[0][@"headImage"] forKey:@"headImage"];
+        [UserDefaultsUtils saveValue:data[0][@"userName"] forKey:@"nickName"];
+        [UserDefaultsUtils saveValue:data[0][@"userSex"] forKey:@"sex"];
+        [UserDefaultsUtils saveValue:data[0][@"userAddress"] forKey:@"city"];
+        [UserDefaultsUtils saveValue:data[0][@"userPhone"] forKey:@"phone"];
+        [UserDefaultsUtils saveValue:data[0][@"userSign"] forKey:@"sign"];
+        
+    }Failed:^(NSInteger code ,id errorMsg){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }Complete:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
 }
+
+- (void)setRSL{
+    
+    tableMuArr = [[NSMutableArray alloc] init];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [HandlerBusiness ServiceWithApicode:ApiCodeGetReadListenSay Parameters:nil Success:^(id data , id msg){
+        
+        for (int i = 0; i < [data count]; i++) {
+            [tableMuArr addObject:data[i]];
+        }
+        
+        [self.tableView reloadData];
+        
+    }Failed:^(NSInteger code ,id errorMsg){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }Complete:^{
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+
 
 - (void)setNavigation{
     UIButton *headImgBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.f, 0.f, 34.f, 34.f)];
@@ -195,7 +235,7 @@ static NSString *const kHomeTableViewCellIdentify = @"kHomeTableViewCellIdentify
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     PECollectionTableViewController *vc = [[PECollectionTableViewController alloc] init];
-    vc.type = indexPath.row;
+    vc.list = indexPath.row;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     self.hidesBottomBarWhenPushed = NO;
@@ -233,11 +273,10 @@ static NSString *const kHomeTableViewCellIdentify = @"kHomeTableViewCellIdentify
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.hidesBottomBarWhenPushed = YES;
     RlsViewController *vc = [[RlsViewController alloc] init];
-    vc.videoURL = @"http://111.1.61.53/he.yinyuetai.com/uploads/videos/common/B8E3013FA9CA150E11046D4FFE109C99.flv?sc=a563e2566d24fdb7";
-    vc.musicName = @"Red";
-    vc.titleName = @"Taylor Swift—RED";
-    vc.imageName = @"rls_picture";
-    vc.lookedPerson = @"79";
+    vc.videoURL = tableMuArr[indexPath.row][@"mvURL"];
+    vc.musicName = tableMuArr[indexPath.row][@"musicName"];
+    vc.titleName = tableMuArr[indexPath.row][@"titleName"];
+    vc.lookedPerson = tableMuArr[indexPath.row][@"lookedPerson"];
     vc.isLike = YES;
     [self.navigationController pushViewController:vc animated:YES];
     self.hidesBottomBarWhenPushed = NO;//    else if (indexPath.row == 1) {

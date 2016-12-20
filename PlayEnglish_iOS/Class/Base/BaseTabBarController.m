@@ -49,6 +49,7 @@
     item3.title = @"我的";
     [item3 setTitleTextAttributes:attrs forState:UIControlStateNormal];
     [item3 setTitleTextAttributes:attrSelected forState:UIControlStateSelected];
+    
 
     
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:[PEHomeTableViewController new]];
@@ -57,6 +58,7 @@
     nav2.tabBarItem = item2;
     UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:[PEMineTableViewController new]];
     nav3.tabBarItem = item3;
+    
     
     self.viewControllers = @[nav1, nav2, nav3];
     

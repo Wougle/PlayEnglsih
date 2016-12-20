@@ -48,13 +48,50 @@
         [self presentViewController:alterController animated:YES completion:nil];
     }
     else{
-        UIAlertController *alterController = [UIAlertController alertControllerWithTitle:ALERT_TITLE message:@"发表成功！" preferredStyle:UIAlertControllerStyleAlert];
-        [alterController addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+        
+        NSDate *detaildate=[NSDate date];
+        //实例化一个NSDateFormatter对象
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        //设定时间格式,这里可以设置成自己需要的格式
+        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+        NSString *timeString = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate: detaildate]];
+        
+        NSDictionary *tableDic = [[NSMutableDictionary alloc] init];
+        tableDic = @{
+                     @"commID":[NSString stringWithFormat:@"%d",_commIdLocal],
+                     @"nickName":[UserDefaultsUtils valueWithKey:@"nickName"],
+                     @"time":timeString,
+                     @"headImage":[UserDefaultsUtils valueWithKey:@"headImage"],
+                     @"isFollow":@"0",
+                     @"text":noticeContent,
+                     @"video":@"-1",
+                     @"image":@"-1",
+                     @"reply":@"0",
+                     @"like":@"0",
+                     @"isLike":@"1",
+                     };
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        [HandlerBusiness ServiceWithApicode:ApiCodeSubmitCommunity Parameters:tableDic Success:^(id data , id msg){
+            DBG(@"发表成功");
             
-            [self.navigationController popViewControllerAnimated:YES];
+        }Failed:^(NSInteger code ,id errorMsg){
             
-        }]];
-        [self presentViewController:alterController animated:YES completion:nil];
+            UIAlertController *alterController = [UIAlertController alertControllerWithTitle:ALERT_TITLE message:@"发表成功！" preferredStyle:UIAlertControllerStyleAlert];
+            [alterController addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            }]];
+            [self presentViewController:alterController animated:YES completion:nil];
+            
+           // [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }Complete:^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
     }
 
 }
